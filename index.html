@@ -10,25 +10,29 @@
   </head>
   <body>
     <header>
-      <div></div>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-open-page-variant</title><path d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" /></svg> 
+      <div>
+        <label for = "btn-add-book" ><svg class = 'svg-plus' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus-box</title><path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg></label>
+        <button id = 'btn-add-book'>Add Book</button>
+      </div>
     </header>
     <main>
-      <form class="form hidden">
+      <form action="" method="get" class="form hidden">
         <div>
-          <label>Title</label>
-          <inpute></inpute>
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required></input>
         </div>
         <div>
-          <label>Author</label>
-          <inpute></inpute>
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" required></input>
         </div>
         <div>
-          <label>Pages</label>
-          <inpute></inpute>
+          <label for="pages">Pages</label>
+          <input type="number" id="pages" name="pages" required></input>
         </div>
         <div>
-          <label>Read</label>
-          <inpute></inpute>
+          <label for="read">Read</label>
+          <input type="checkbox" id="read" name="read"></input>
         </div>
       </form>
       <div id="grid-library"></div>

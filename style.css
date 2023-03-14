@@ -5,3 +5,37 @@
   padding: 0px;
   box-sizing: border-box;
 }
+/*header*/
+header {
+  display: flex;
+}
+header > svg {
+  height: 3em;
+  width: 3em;
+}
+
+header > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
+svg[class="svg-plus"] {
+  height: 3em;
+  width: 3em;
+}
+
+#btn-add-book {
+  white-space: nowrap;
+  width: min-content;
+  padding: 1em;
+  border-radius: 40%;
+  border: none;
+}
+#btn-add-book:hover {
+  background-color: red;
+}
+
+/*main*/
+form > div {
+  width: 100px;
+}

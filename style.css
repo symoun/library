@@ -47,6 +47,8 @@ svg[class="svg-plus"] {
   background-color: red;
 }
 
+/*line dividing header and main*/
+
 hr {
   border-bottom: 1px solid black;
   width: 90%;
@@ -58,6 +60,7 @@ hr {
 main {
 }
 
+/*form*/
 form {
   box-shadow: 0 0 10px -1px black;
   border-radius: 0.5em;
@@ -75,6 +78,29 @@ form > button {
   width: 2.5em;
   border: none;
 }
+button {
+  background-color: var(--slate);
+}
+form > button > span {
+  display: none;
+}
+form > button:hover svg {
+  outline: 2px solid red;
+}
+form > button:hover span {
+  display: block;
+  color: red;
+  margin: auto;
+}
 form > div {
   width: 100px;
+}
+
+/*grid books*/
+#grid-library {
+}
+.book-items {
+  box-shadow: 0 0 10px -1px black;
+  border-radius: 0.5em;
+  background-color: var(--slate);
 }

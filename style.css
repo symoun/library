@@ -1,4 +1,5 @@
 :root {
+  --slate: #e2e8f0;
 }
 * {
   margin: 0px;
@@ -8,12 +9,23 @@
 /*header*/
 header {
   display: flex;
+  justify-content: space-between;
+
+  padding: 1.5em;
 }
-header > svg {
-  height: 3em;
-  width: 3em;
+.svg-book {
+  height: 5em;
+  width: 5em;
+}
+header > div > span {
+  font-size: 3em;
+  font-weight: bold;
 }
 
+header > div {
+  display: flex;
+  align-items: center;
+}
 header > div:last-child {
   display: flex;
   align-items: center;
@@ -35,7 +47,34 @@ svg[class="svg-plus"] {
   background-color: red;
 }
 
+hr {
+  border-bottom: 1px solid black;
+  width: 90%;
+  margin: auto;
+}
+
 /*main*/
+
+main {
+}
+
+form {
+  box-shadow: 0 0 10px -1px black;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: var(--slate);
+  max-width: 300px;
+  position: relative;
+}
+
+form > button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 2.5em;
+  border: none;
+}
 form > div {
   width: 100px;
 }

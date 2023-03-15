@@ -1,5 +1,7 @@
 "use strict";
+const btnAddBook = document.querySelector("#btn-add-book");
 const form = document.querySelector(".form");
+const formBackground = document.querySelector("#form-background");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
@@ -34,6 +36,7 @@ function renderBook() {
           <div>Author: ${book.author}</div>
           <div>Pages: ${book.pages}</div>
           <div>Read: ${book.read ? "Completed" : "Incomplete"}</div>
+
         </div>
 `;
   });
@@ -47,10 +50,21 @@ function clearForm() {
   read.checked = false;
 }
 
-form.addEventListener("submit", function (e) {
+function clickSubmitButton(e) {
   e.preventDefault();
   const book = new Book(title.value, author.value, pages.value, read.checked);
   addBookToLibrary(book);
   renderBook();
   clearForm();
-});
+  formBGToggleHidden();
+}
+
+function formBGToggleHidden() {
+  formBackground.classList.toggle("hidden");
+}
+
+function run() {
+  form.addEventListener("submit", clickSubmitButton);
+  btnAddBook.addEventListener("click", formBGToggleHidden);
+}
+run();

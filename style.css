@@ -126,4 +126,26 @@ form > div {
   box-shadow: 0 0 10px -1px black;
   border-radius: 0.5em;
   background-color: var(--slate);
+  position: relative;
+}
+
+.close-book-items {
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  height: 1.5em;
+  width: 1.5em;
+  border: none;
+}
+
+.change-read {
+  position: absolute;
+  bottom: 1.3em;
+  right: 0.3em;
+  font-weight: bold;
+  border: none;
+  display: flex;
+}
+.change-read > svg {
+  align-items: center;
 }

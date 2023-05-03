@@ -8,7 +8,7 @@ const pages = document.getElementById("pages");
 const read = document.getElementById("read");
 const gridLibrary = document.getElementById("grid-library");
 
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem("library")) || [];
 
 function Book(title, author, pages, read = true) {
   this.title = title;
@@ -26,10 +26,10 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-function renderBook() {
+function renderBook(library) {
   gridLibrary.innerHTML = "";
   let html = "";
-  myLibrary.forEach((book, index, array) => {
+  library.forEach((book, index, array) => {
     html += `
         <div class = "book-items" data-index ="${index}">
           <div>Title: ${book.title}</div> 
@@ -47,6 +47,7 @@ Change</button>
   });
   gridLibrary.insertAdjacentHTML("beforeend", html);
   addListenerToLibrary();
+  localStorage.setItem("library", JSON.stringify(library));
 }
 
 function clearForm() {
@@ -60,7 +61,7 @@ function clickSubmitButton(e) {
   e.preventDefault();
   const book = new Book(title.value, author.value, pages.value, read.checked);
   addBookToLibrary(book);
-  renderBook();
+  renderBook(myLibrary);
   clearForm();
   formBGToggleHidden();
 }
@@ -80,15 +81,16 @@ function addListenerToLibrary() {
 
 function deleteBook(e) {
   myLibrary.splice(e.target.closest(".book-items[data-index]"), 1);
-  renderBook();
+  renderBook(myLibrary);
 }
 function changeRead(e) {
   myLibrary[e.target.closest(".book-items[data-index]").dataset.index].read =
     !myLibrary[e.target.closest(".book-items[data-index]").dataset.index].read;
-  renderBook();
+  renderBook(myLibrary);
 }
 
 function run() {
+  renderBook(myLibrary);
   form.addEventListener("submit", clickSubmitButton);
   btnAddBook.addEventListener("click", formBGToggleHidden);
 }
